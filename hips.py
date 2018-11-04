@@ -1,5 +1,3 @@
-#/usr/bin/env python3
-
 # H.I.P.S, by BufferBandit.
 # Hide your HTML source code by encoding it with tabs and spaces...
 
@@ -31,8 +29,8 @@ class HIPS:
         return html_string
 
     def write_html(self,out_file="hips.html"):
-        with open(out_file,"w") as p:
-            p.write(self.create_html_file())
+        with open(out_file,"w") as f:
+            f.write(self.create_html_file())
             
 if __name__ == "__main__":
     hips = HIPS("<svg/onload=alert('Hidden in plain sight!')>")
