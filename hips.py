@@ -7,7 +7,7 @@ class HIPS:
     
     def __init__(self,raw_html):
         self.space,self.tab = " ","	"
-        self.raw_html = raw_html.replace(" ","&#x20;")
+        self.raw_html = raw_html
         
 
     def text_to_bits(self,text, encoding='utf-8', errors='surrogatepass'):
@@ -24,7 +24,7 @@ class HIPS:
         
         #html_string = "<script>"+ "/"+invisible_bits +"""/.source.replace(/ /g, "0").replace(/	/g, "1").replace(/(\d{8})/g, '$1 ').replace(/(^\s+|\s+$)/,'').replace(/\d+./g,str=>String.fromCharCode('0b'+str)).replace(/.{7}/g,function(w){document.write(w)})""" +"</script>"
         
-        html_string = "<script>"+ "/"+invisible_bits +"""/.source.replace(/ /g, "0").replace(/	/g, "1").match(/.{8}/g).join(' ').replace(/\d+./g,str=>String.fromCharCode('0b'+str)).split(" ").map(_var =>document.write(_var))   """ +"</script>"
+        html_string = "<script>"+ "/"+invisible_bits +"""/.source.replace(/ /g, "0").replace(/	/g, "1").match(/.{8}/g).join(' ').replace(/\d+./g,str=>String.fromCharCode('0b'+str)).split().map(_var =>document.write(_var))   """ +"</script>"
         
         return html_string
 
